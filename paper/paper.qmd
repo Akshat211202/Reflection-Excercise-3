@@ -1,0 +1,53 @@
+---
+title: "Mariiage license Data"
+author: 
+  - Akshat Aneja
+thanks: "Code and data are available at: https://github.com/Akshat211202/Reflection-Excercise-3"
+date: 19 Septmeber 2024
+date-format: long
+abstract: Data for marriage licenses
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+```
+
+# Introduction
+
+You can and should cross-reference sections and sub-sections. We use @talia, @opendatatorotno, and @rohan.
+
+The remainder of this paper is structured as follows. @sec-mydatasection
+
+# Data {#sec-mydatasection}
+
+Some of our data is of penguins (@fig-marriage), from @palmerpenguins.
+
+```{r}
+#| label: fig-marriage
+#| fig-cap: Marriage Licenses issued
+#| echo: false
+
+data |>
+  ggplot(aes(x = date, y = marriage_licenses)) +
+  geom_point() +
+  labs(title = "Marriage Licenses Issued",
+       x = "Year",
+       y = "Licenses")
+```
+
+The graph shows a stable pattern of marriage licenses issued from 2010 to 2019, with some cyclic trends, likely seasonal. Around 2020, there's a sharp decline, likely due to the COVID-19 pandemic. From 2021 onwards, there's a significant surge in licenses, possibly due to postponed weddings and societal recovery post-pandemic.
+
+
+\newpage
+
+# References
